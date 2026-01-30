@@ -1,0 +1,79 @@
+% arara: pdflatex: { synctex: yes }
+% arara: biber
+% arara: pdflatex: { synctex: yes }
+% arara: pdflatex: { synctex: yes }
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{minted}  % Requires pygments
+\usepackage{biblatex}
+
+\geometry{margin=1in}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+% Example bibliography file (create refs.bib)
+% \addbibresource{refs.bib}
+
+\title{Example Document}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This is a sample document to test your LaTeX environment.
+It demonstrates various packages included in the Nix shell.
+\end{abstract}
+
+\section{Introduction}
+
+This environment includes:
+\begin{itemize}
+    \item Full \LaTeX{} distribution via \texttt{texlive}
+    \item Build tools: \texttt{latexmk} and \texttt{arara}
+    \item Editor: Emacs with AUC\TeX{}
+    \item PDF viewer: \texttt{llpp}
+\end{itemize}
+
+\section{Mathematics}
+
+The Euler identity:
+\begin{equation}
+    e^{i\pi} + 1 = 0
+\end{equation}
+
+\section{Code Highlighting}
+
+Using the \texttt{minted} package (requires \texttt{pygments}):
+
+\begin{minted}{python}
+def hello():
+    print("Hello from the Nix LaTeX environment!")
+\end{minted}
+
+\section{Building}
+
+\subsection{With latexmk}
+\begin{verbatim}
+latexmk -pdf example.tex
+latexmk -pvc -pdf example.tex  # continuous mode
+\end{verbatim}
+
+\subsection{With arara}
+\begin{verbatim}
+arara example.tex
+\end{verbatim}
+
+% \printbibliography
+
+\end{document}

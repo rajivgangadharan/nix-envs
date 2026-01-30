@@ -1,0 +1,9 @@
+# Starship configuration (auto-generated)
+starship.toml
+
+# Result symlinks
+result
+result-*
+
+# Test scripts
+test-*.sh
