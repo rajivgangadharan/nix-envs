@@ -1,0 +1,79 @@
+# Starship configuration for deployment
+format = """
+[░▒▓](#ff6b6b)\
+$os\
+$flyio\
+[▓▒░](#ff6b6b)\
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
+
+[os]
+disabled = false
+style = "bg:#ff6b6b fg:#090c0c"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = "󰣀"
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = "󱘊"
+Linux = "󰌽"
+Fedora = "󰣛"
+Arch = "󰣇"
+Alpine = "󰰉"
+Amazon = "󰉄"
+Android = "󰀲"
+CentOS = "󱄚"
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[flyio]
+disabled = false
+symbol = "🪂"
+style = "bg:#ff6b6b fg:#090c0c"
+format = '[ $symbol ]($style)'
+
+[username]
+show_always = true
+style_user = "bg:#ff6b6b fg:#090c0c"
+style_root = "bg:#ff6b6b fg:#090c0c"
+format = '[$user]($style) '
+
+[directory]
+style = "bg:#4ecdc4 fg:#090c0c"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:#394260 fg:#e3e5e5"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#394260 fg:#e3e5e5"
+format = '[$all_status$ahead_behind ]($style)'
+
+[cmd_duration]
+min_time = 500
+style = "bg:#f2cdcd fg:#090c0c"
+format = '[ took $duration ]($style)'
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
